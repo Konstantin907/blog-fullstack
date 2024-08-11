@@ -3,19 +3,25 @@
 import React, { useState } from 'react'
 import styles from './authLinks.module.css'
 import Link from 'next/link'
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const AuthLinks = () => {
 
     const[open, setOpen] = useState(false);
 
-    const status = 'authenticated'
+    const {status} = useSession()
+    const router = useRouter()
+
+    if(status==='unauthenticated'){
+        return router.push('/login')
+    }
 
   return (
      <>
-    {status === 'notauthenticated' ? (
+    {status === 'unauthenticated' ? (
         <Link href='/login'>Login</Link>
-    ): (
+    ):(
     <>
         <Link href='/write'>Write</Link>
             <span className={styles.link} onClick={()=>signOut()}>Logout</span>

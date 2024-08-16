@@ -8,11 +8,13 @@
 .imageContainer {
   flex: 1;
   height: 350px;
+  width: 350px;
   position: relative;
 }
 
 .image {
   object-fit: cover;
+
 }
 
 .textContainer {

@@ -7,7 +7,7 @@ import Comments from '../../components/comments/Comments'
 
 const getData = async (slug) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts/${slug}`,
+    `http://localhost:3000/api/posts/${slug}?popular=true`,
     {
       cache: "no-store",
     }
@@ -45,7 +45,13 @@ const SinglePage = async({ params }) => {
             </div>
             <div className={styles.userTextContainer}>
                 <span className={styles.username}>{data?.user.name}</span>
-                <span className={styles.date}>01.05.2025</span>
+                <span className={styles.date}>
+                {new Date(data?.createdAt).toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+              })}
+                </span>
             </div>
         </div>
         {data?.img && <div className={styles.imageContainer}>

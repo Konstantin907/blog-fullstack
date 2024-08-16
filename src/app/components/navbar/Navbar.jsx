@@ -36,7 +36,10 @@ const Navbar = () => {
           height={24}
         />
       </div>
-      <div className={styles.logo}>Quokaa blog</div>
+      <Link href='/'>
+        <div className={styles.logo}>Quokaa blog</div>
+      </Link>
+     
       <div className={styles.links}>
       <ThemeToggle />  
         <Link className={styles.link} href='/'>Homepage</Link>

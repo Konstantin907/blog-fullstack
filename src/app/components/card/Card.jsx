@@ -3,13 +3,18 @@ import styles from './card.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
+
+const stripHtmlTags = (str) => {
+  return str.replace(/<\/?[^>]+(>|$)/g, "");
+};
+
 const Card = ({key, item}) => {
   return (
     <div className={styles.container} key={key}>
      {item.img && ( 
       <div className={styles.imageContainer}>
            <Image 
-               src={item.img} alt="" fill className={styles.image}
+               src={item.img} alt="" height={350} width={300} className={styles.image}
             />
           </div> 
         )}
@@ -21,7 +26,7 @@ const Card = ({key, item}) => {
         <Link href={`/posts/${item.slug}`}>
             <h1>{item.title}</h1>
             </Link>  
-            <p>{item.desc}</p>
+            <p>{stripHtmlTags(item.desc.substring(0, 100))}...</p>
             
 
         

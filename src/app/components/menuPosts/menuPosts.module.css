@@ -4,12 +4,18 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
+    letter-spacing: 0.5px;
   }
   
   .item {
     display: flex;
     align-items: center;
     gap: 20px;
+    
+  }
+  .item:hover{
+    scale: 1.1;
+    transition-duration: 1s;
   }
   
   .imageContainer {
@@ -28,7 +34,7 @@
     flex: 4;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   }
   
   .category {
@@ -71,8 +77,14 @@
   
   .detail {
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
   .date {
     color: gray;
+  }
+  .username{
+    text-decoration: underline;
   }

@@ -31,7 +31,7 @@ const CategoryList = async() => {
             key={item._id}
           >
             {item.img && (
-              <Image
+              <Image 
                 src={item.img.startsWith('/') ? item.img : `/images/${item.img}`}
                 alt=""
                 width={32}

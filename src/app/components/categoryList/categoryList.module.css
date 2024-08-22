@@ -18,32 +18,32 @@
   text-transform: capitalize;
   width: 15%;
   height: 80px;
-  justify-content: center;
+  justify-content: center; 
   border-radius: 10px;
 }
 
 .category.style {
-  background-color: #ffffcc;
+  background-color: #57c4ff31;
 }
 
 .category.fashion {
-  background-color: #ffcc00;
+  background-color: #da85c731;
 }
 
 .category.food {
-  background-color: #62fa5ad3;
+  background-color: #7fb88133;
 }
 
 .category.travel {
-  background-color: #e477c0;
+  background-color: #ff795736;
 }
 
 .category.culture {
-  background-color: #bc986c45;
+  background-color: #ffb04f45;
 }
 
 .category.coding {
-  background-color: #d812d8;
+  background-color: #5e4fff31;
 }
 
 .image {
